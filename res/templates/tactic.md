@@ -1,6 +1,5 @@
 ---
-aliases:
-    {% for alias in aliases %}
+aliases: {% for alias in aliases %}
     - {{alias}}
     {% endfor %}
 mitre-attack: {{mitre_attack}}
