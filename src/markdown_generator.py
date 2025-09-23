@@ -53,7 +53,7 @@ class MarkdownGenerator():
             )
             tactic_file = os.path.join(tactics_dir, f"{tactic.name}.md")
 
-            with open(tactic_file, 'w') as fd:
+            with open(tactic_file, 'w', encoding="utf-8") as fd:
                 fd.write(content)
 
 
@@ -108,7 +108,7 @@ class MarkdownGenerator():
 
             technique_file = os.path.join(techniques_dir, f"{technique.name}.md")
 
-            with open(technique_file, 'w') as fd:
+            with open(technique_file, 'w', encoding="utf-8") as fd:
                 fd.write(content)
 
 
@@ -148,7 +148,7 @@ class MarkdownGenerator():
                                    "source_name": source_name,
                                    "url": value["url"]} for source_name, value in references.items() ]
             )
-            with open(mitigation_file, 'w') as fd:
+            with open(mitigation_file, 'w', encoding="utf-8") as fd:
                 fd.write(content)
 
 
@@ -191,7 +191,7 @@ class MarkdownGenerator():
                                    "source_name": source_name,
                                    "url": value["url"]} for source_name, value in references.items() ]
             )
-            with open(group_file, 'w') as fd:
+            with open(group_file, 'w', encoding="utf-8") as fd:
                 fd.write(content)
 
     def create_software_notes(self):
@@ -245,7 +245,7 @@ class MarkdownGenerator():
             )
             software_file = os.path.join(software_dir, f"{software.name}.md")
 
-            with open(software_file, 'w') as fd:
+            with open(software_file, 'w', encoding="utf-8") as fd:
                 fd.write(content)
 
     def create_canvas(self, canvas_name, filtered_techniques=[]):
@@ -337,7 +337,7 @@ class MarkdownGenerator():
             canvas["nodes"].append(container_node)
                         
             
-        with open(f"{canvas_name}.canvas", 'w') as fd:
+        with open(f"{canvas_name}.canvas", 'w', encoding="utf-8") as fd:
             fd.write(json.dumps(canvas, indent=2))
             
 
