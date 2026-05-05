@@ -1,5 +1,4 @@
 repository-url: https://raw.githubusercontent.com/mitre-attack/attack-stix-data/master
-version: 17.0
 mitre-object-types:
   tactics: true
   techniques: true

@@ -293,5 +293,5 @@ class StixParser():
                             software_obj.techniques_used = {'technique': technique, 'description': relationship.get('description', '')}
                             technique.software = {'software': software_obj, 'description': relationship.get('description', '')}
 
-                software_obj.description = sw['description']
+                software_obj.description = sw.get('description', '')
                 self.software.append(software_obj)

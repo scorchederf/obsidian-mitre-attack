@@ -1,0 +1,57 @@
+---
+aliases: 
+    - S0340
+    
+mitre-attack: https://attack.mitre.org/software/S0340
+---
+
+## S0340
+
+[Octopus](https://attack.mitre.org/software/S0340) is a Windows Trojan written in the Delphi programming language that has been used by [Nomadic Octopus](https://attack.mitre.org/groups/G0133) to target government organizations in Central Asia since at least 2014.[^2] [^4] [^1]  
+
+### Techniques Used
+| ID | Name | Use |
+| --- | --- | --- |
+| [[Data from Local System\|T1005]] | Data from Local System | [Octopus](https://attack.mitre.org/software/S0340) can exfiltrate files from the system using a documents collector tool.[^1]  |
+| [[System Owner／User Discovery\|T1033]] | System Owner／User Discovery | [Octopus](https://attack.mitre.org/software/S0340) can collect the username from the victim’s machine.[^2]  |
+| [[Standard Encoding\|T1132.001]] | Standard Encoding | [Octopus](https://attack.mitre.org/software/S0340) has encoded C2 communications in Base64.[^2]  |
+| [[Exfiltration Over C2 Channel\|T1041]] | Exfiltration Over C2 Channel | [Octopus](https://attack.mitre.org/software/S0340) has uploaded stolen files and data from a victim's machine over its C2 channel.[^2]  |
+| [[Match Legitimate Resource Name or Location\|T1036.005]] | Match Legitimate Resource Name or Location | [Octopus](https://attack.mitre.org/software/S0340) has been disguised as legitimate programs, such as Java and Telegram Messenger.[^2] [^1]  |
+| [[System Network Configuration Discovery\|T1016]] | System Network Configuration Discovery | [Octopus](https://attack.mitre.org/software/S0340) can collect the host IP address from the victim’s machine.[^2]  |
+| [[File and Directory Discovery\|T1083]] | File and Directory Discovery | [Octopus](https://attack.mitre.org/software/S0340) can collect information on the Windows directory and searches for compressed RAR files on the host.[^2] [^4] [^1]  |
+| [[Exfiltration to Cloud Storage\|T1567.002]] | Exfiltration to Cloud Storage | [Octopus](https://attack.mitre.org/software/S0340) has exfiltrated data to file sharing sites.[^1]  |
+| [[System Information Discovery\|T1082]] | System Information Discovery | [Octopus](https://attack.mitre.org/software/S0340) can collect the computer name, OS version, and OS architecture information.[^2]  |
+| [[Registry Run Keys ／ Startup Folder\|T1547.001]] | Registry Run Keys ／ Startup Folder | [Octopus](https://attack.mitre.org/software/S0340) achieved persistence by placing a malicious executable in the startup directory and has added the `HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run` key to the Registry.[^2]  |
+| [[Local Data Staging\|T1074.001]] | Local Data Staging | [Octopus](https://attack.mitre.org/software/S0340) has stored collected information in the Application Data directory on a compromised host.[^2] [^1]  |
+| [[Archive via Utility\|T1560.001]] | Archive via Utility | [Octopus](https://attack.mitre.org/software/S0340) has compressed data before exfiltrating it using a tool called Abbrevia.[^1]   |
+| [[Windows Management Instrumentation\|T1047]] | Windows Management Instrumentation | [Octopus](https://attack.mitre.org/software/S0340) has used wmic.exe for local discovery information.[^2]  |
+| [[Web Protocols\|T1071.001]] | Web Protocols | [Octopus](https://attack.mitre.org/software/S0340) has used HTTP GET and POST requests for C2 communications.[^2] [^1]  |
+| [[Spearphishing Attachment\|T1566.001]] | Spearphishing Attachment | [Octopus](https://attack.mitre.org/software/S0340) has been delivered via spearsphishing emails.[^1]  |
+| [[Ingress Tool Transfer\|T1105]] | Ingress Tool Transfer | [Octopus](https://attack.mitre.org/software/S0340) can download additional files and tools onto the victim’s machine.[^2] [^4] [^1]  |
+| [[Local Storage Discovery\|T1680]] | Local Storage Discovery | [Octopus](https://attack.mitre.org/software/S0340) can collect system drive and disk size information.[^2]  |
+| [[Malicious File\|T1204.002]] | Malicious File | [Octopus](https://attack.mitre.org/software/S0340) has relied upon users clicking on a malicious attachment delivered through spearphishing.[^1]  |
+| [[Screen Capture\|T1113]] | Screen Capture | [Octopus](https://attack.mitre.org/software/S0340) can capture screenshots of the victims’ machine.[^2] [^4] [^1]  |
+
+
+
+### Groups That Use This Software
+| ID | Name |
+| --- | --- |
+| [[Nomadic Octopus\|G0133]] | Nomadic Octopus |
+
+
+
+## References
+
+[^1]: [ESET Nomadic Octopus 2018](https://www.virusbulletin.com/uploads/pdf/conference_slides/2018/Cherepanov-VB2018-Octopus.pdf)
+
+
+[^2]: [Securelist Octopus Oct 2018](https://securelist.com/octopus-infested-seas-of-central-asia/88200/)
+
+
+[^3]: Octopus
+
+
+[^4]: [Security Affairs DustSquad Oct 2018](https://securityaffairs.co/wordpress/77165/apt/russia-linked-apt-dustsquad.html)
+
+
