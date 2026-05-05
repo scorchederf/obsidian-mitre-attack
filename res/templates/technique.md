@@ -1,6 +1,8 @@
 ---
 aliases: {% for alias in aliases %}
     - {{alias}}{% endfor %}
+tags: {% for tag in tags %}
+    - {{tag}}{% endfor %}
 mitre-attack: {{mitre_attack}}
 tactic: 
     {% for tactic in tactics %} - {{tactic}}{% endfor %}
@@ -12,38 +14,38 @@ permissions required:
     {% else %} - none{% endif %}
 ---
 
-## {{title}}
+## Description
 
 {{description | parse_description(references)}}
 
 {% if procedures %}
-### Procedure Examples
+## Procedure Examples
 | ID | Name | Use |
 | --- | --- | --- |
-{% for procedure in procedures %}| [[{{procedure['name']}}\|{{procedure['id']}}]] | {{procedure['name']}} | {{ procedure['description'] | parse_description(references) }} |
+{% for procedure in procedures %}| {{procedure['link']}} | {{procedure['name']}} | {{ procedure['description'] | parse_description(references) }} |
 {% endfor %}
 {% endif %}
 
 {% if mitigations %}
-### Mitigations
-| ID | Name | Descrption |
+## Mitigations
+| ID | Name | Description |
 | --- | --- | --- |
-{% for mit in mitigations %}| [[{{mit['name']}}\|{{mit['id']}}]] | {{mit['name']}} | {{mit['description'] | parse_description(references)}} |
+{% for mit in mitigations %}| {{mit['link']}} | {{mit['name']}} | {{mit['description'] | parse_description(references)}} |
 {% endfor %}
 {% endif %}
 
 {% if subtechniques %}
-### Sub-techniques
+## Sub-techniques
 | ID | Name |
 | --- | --- |
-{% for sbt in subtechniques %}| [[{{sbt.name}}\|{{sbt.id}}]] | {{sbt.name}} |
+{% for sbt in subtechniques %}| {{sbt['link']}} | {{sbt['name']}} |
 {% endfor %}
 {% endif %}
 
-## References
-{% for ref in references %}
-{% if ref['url'] %}[^{{ref['id']}}]: [{{ref['source_name']}}]({{ref['url']}})
-{% else %}[^{{ref['id']}}]: {{ref['source_name']}}
+{% if references %}
+> [!info]- References
+{% for ref in references %}{% if ref['url'] %}> [^{{ref['id']}}]: [{{ref['source_name']}}]({{ref['url']}})
+{% else %}> [^{{ref['id']}}]: {{ref['source_name']}}
 {% endif %}
 {% endfor %}
-
+{% endif %}

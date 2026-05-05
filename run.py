@@ -13,7 +13,7 @@ import re
 
 if __name__ == '__main__':
     logger.remove()
-    logger.add(sys.stdout, colorize=True, format="[<level>{level}</level>] - <level>{message}</level>")
+    logger.add(sys.stdout, colorize=True, format="[{time:YYYY-MM-DD HH:mm:ss}] - [<level>{level}</level>] - <level>{message}</level>")
 
     parser = argparse.ArgumentParser(description='Downdload MITRE ATT&CK STIX data and parse it to Obsidian markdown notes')
 
@@ -66,7 +66,7 @@ if __name__ == '__main__':
                 found_techniques = []
                 canvas_path = args.path
 
-            markdown_generator = MarkdownGenerator(techniques=parser.techniques, tactics=parser.tactics)
+            markdown_generator = MarkdownGenerator(techniques=parser.techniques, tactics=parser.tactics, domain=domain)
             markdown_generator.create_canvas(canvas_path, found_techniques)
         else:
             logger.error("You must provide a valid file path")
@@ -85,10 +85,14 @@ if __name__ == '__main__':
     
         parser = StixParser(config['repository-url'], domain, config.get('version'))
         logger.info("Extracting objects from STIX data")
-        parser.get_data(tactics=True, techniques=True, mitigations=True, groups=True, software=True)
+        parser.get_data(tactics=config['mitre-object-types']['tactics'],
+                        techniques=config['mitre-object-types']['techniques'],
+                        mitigations=config['mitre-object-types']['mitigations'],
+                        groups=config['mitre-object-types']['groups'],
+                        software=config['mitre-object-types']['software'])
         os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-        markdown_generator = MarkdownGenerator(output_dir, parser.tactics, parser.techniques, parser.mitigations, parser.groups, parser.software)
+        markdown_generator = MarkdownGenerator(output_dir, parser.tactics, parser.techniques, parser.mitigations, parser.groups, parser.software, domain=domain)
         if config['mitre-object-types']['tactics']:
             logger.info("Creating Tactic notes")
             markdown_generator.create_tactic_notes()
@@ -104,5 +108,10 @@ if __name__ == '__main__':
         if config['mitre-object-types']['software']:
             logger.info("Creating Software notes")
             markdown_generator.create_software_notes()
+        logger.info("Creating MITRE ATT&CK index")
+        markdown_generator.create_index()
+        if config['mitre-object-types']['tactics'] and config['mitre-object-types']['techniques']:
+            logger.info("Creating ATT&CK canvas")
+            markdown_generator.create_canvas(os.path.join(output_dir, "mitre-attack"))
         
         create_graph_json(output_dir)

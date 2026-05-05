@@ -4,21 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "8e769a7e246c2db1",
+        "id": "66502d94ee39bd27",
         "type": "tabs",
         "children": [
           {
-            "id": "55cd98c4207129e1",
+            "id": "1c08db253770a961",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "groups/APT17.md",
-                "mode": "source",
-                "source": false
+                "file": "kb/mitre/attack/mitre-attack.canvas",
+                "viewState": {
+                  "x": 3750,
+                  "y": 7579,
+                  "zoom": -4
+                }
               },
-              "icon": "lucide-file",
-              "title": "APT17"
+              "icon": "lucide-layout-dashboard",
+              "title": "mitre-attack"
             }
           }
         ]
@@ -53,10 +56,10 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#attack/type/tactic",
                 "matchingCase": false,
                 "explainSearch": false,
-                "collapseAll": false,
+                "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
               },
@@ -162,12 +165,12 @@
               "title": "Outline"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,36 +183,44 @@
       "bases:Create new base": false
     }
   },
-  "active": "55cd98c4207129e1",
+  "active": "1ff55fddb2b843a8",
   "lastOpenFiles": [
-    "mitigations/Account Use Policies.md",
-    "software/4H RAT.md",
-    "tactics/Collection.md",
-    "techniques/／etc／passwd and ／etc／shadow.md",
-    "file.md",
-    "software/XORIndex Loader.md",
-    "software/SplatCloak.md",
-    "software/Crocodilus.md",
-    "software/DOWNIISSA.md",
-    "software/DRYHOOK.md",
-    "software/StarProxy.md",
-    "software/LazyWiper.md",
-    "software/Qilin.md",
-    "software/BRUSHFIRE.md",
-    "software/VIRTUALPITA.md",
-    "software/Shai-Hulud.md",
-    "software/HIUPAN.md",
-    "software/SPAWNCHIMERA.md",
-    "software/RIFLESPINE.md",
-    "software/PHASEJAM.md",
-    "software/LAMEHUG.md",
-    "software/ANELLDR.md",
-    "software/MOPSLED.md",
-    "software/AshTag.md",
-    "software/TRAILBLAZE.md",
-    "software/CorKLOG.md",
-    "software",
-    "groups",
-    "mitigations"
+    "kb/mitre/attack/mitigations/M1013-Application_Developer_Guidance.md",
+    "kb/mitre/attack/techniques/T1053.005-Scheduled_Task.md",
+    "kb/mitre/attack/tactics/TA0003-Persistence.md",
+    "kb/mitre/attack/index.md",
+    "kb/mitre/attack/tactics/TA0001-Initial_Access.md",
+    "kb/mitre/attack/techniques/T1685.003-Modify_or_Spoof_Tool_UI.md",
+    "kb/mitre/attack/techniques/T1687-Exploitation_for_Defense_Impairment.md",
+    "kb/mitre/attack/techniques/T1685.001-Disable_or_Modify_Windows_Event_Log.md",
+    "kb/mitre/attack/techniques/T1682-Query_Public_AI_Services.md",
+    "kb/mitre/attack/techniques/T1666-Modify_Cloud_Resource_Hierarchy.md",
+    "kb/mitre/attack/techniques/T1615-Group_Policy_Discovery.md",
+    "kb/mitre/attack/techniques/T1613-Container_and_Resource_Discovery.md",
+    "kb/mitre/attack/techniques/T1606.002-SAML_Tokens.md",
+    "kb/mitre/attack/techniques/T1602-Data_from_Configuration_Repository.md",
+    "kb/mitre/attack/techniques/T1600-Weaken_Encryption.md",
+    "kb/mitre/attack/techniques/T1597.002-Purchase_Technical_Data.md",
+    "kb/mitre/attack/techniques/T1596.003-Digital_Certificates.md",
+    "kb/mitre/attack/techniques/T1596.002-WHOIS.md",
+    "kb/mitre/attack/techniques/T1596.001-DNS_Passive_DNS.md",
+    "kb/mitre/attack/techniques/T1590.005-IP_Addresses.md",
+    "kb/mitre/attack/techniques/T1594-Search_Victim-Owned_Websites.md",
+    "kb/mitre/attack/techniques/T1592-Gather_Victim_Host_Information.md",
+    "kb/mitre/attack/techniques/T1590.002-DNS.md",
+    "kb/mitre/attack/techniques/T1588.007-Artificial_Intelligence.md",
+    "kb/mitre/attack/techniques/T1588.004-Digital_Certificates.md",
+    "kb/mitre/attack/techniques/T1587.003-Digital_Certificates.md",
+    "kb/mitre/attack/techniques",
+    "kb/mitre/attack/tactics",
+    "kb/mitre/attack/mitre-attack.canvas",
+    "kb/mitre/attack/software",
+    "kb/mitre/attack/mitigations",
+    "kb/mitre/attack",
+    "kb/mitre",
+    "kb",
+    "kb/mitre/software",
+    "kb/mitre/mitigations",
+    "kb/mitre/techniques"
   ]
 }

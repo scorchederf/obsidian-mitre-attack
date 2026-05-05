@@ -3,5 +3,5 @@ mitre-object-types:
   tactics: true
   techniques: true
   mitigations: true
-  groups: true
+  groups: false
   software: true

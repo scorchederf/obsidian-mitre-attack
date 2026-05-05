@@ -195,11 +195,11 @@ class StixParser():
 
                 for relationship in mitigation_relationships:
                     for technique in self.techniques:
-                        refs = relationship.get('external_references', [])
-                        for ext_ref in refs:
-                            mitigation_obj.references = (ext_ref['source_name'], ext_ref.get('url',''))
-                            technique.references = (ext_ref['source_name'], ext_ref.get('url',''))
                         if technique.internal_id == relationship['target_ref']:
+                            refs = relationship.get('external_references', [])
+                            for ext_ref in refs:
+                                mitigation_obj.references = (ext_ref['source_name'], ext_ref.get('url',''))
+                                technique.references = (ext_ref['source_name'], ext_ref.get('url',''))
                             mitigation_obj.mitigates = {'technique': technique, 'description': relationship.get('description', '') }
                             technique.mitigations = {'mitigation': mitigation_obj, 'description': relationship.get('description', '') }
 
@@ -251,8 +251,8 @@ class StixParser():
         Get and parse software objects from STIX data
         """
 
-        # Extract software (tools, malware)
-        software_stix = self.src.query([ Filter('type', '=', 'tool') ]) + self.src.query([ Filter('type', '=', 'malware') ])
+        # Extract software tools. Malware objects are intentionally excluded.
+        software_stix = self.src.query([ Filter('type', '=', 'tool') ])
 
         self.software = list()
 
