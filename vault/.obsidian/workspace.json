@@ -11,17 +11,14 @@
             "id": "1c08db253770a961",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "kb/mitre/attack/mitre-attack.canvas",
-                "viewState": {
-                  "x": 3750,
-                  "y": 7579,
-                  "zoom": -4
-                }
+                "file": "kb/mitre/attack/software/S0095-ftp.md",
+                "mode": "source",
+                "source": true
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "mitre-attack"
+              "icon": "lucide-file",
+              "title": "S0095-ftp"
             }
           }
         ]
@@ -183,12 +180,13 @@
       "bases:Create new base": false
     }
   },
-  "active": "1ff55fddb2b843a8",
+  "active": "1c08db253770a961",
   "lastOpenFiles": [
+    "kb/mitre/attack/index.md",
+    "kb/mitre/attack/mitre-attack.canvas",
     "kb/mitre/attack/mitigations/M1013-Application_Developer_Guidance.md",
     "kb/mitre/attack/techniques/T1053.005-Scheduled_Task.md",
     "kb/mitre/attack/tactics/TA0003-Persistence.md",
-    "kb/mitre/attack/index.md",
     "kb/mitre/attack/tactics/TA0001-Initial_Access.md",
     "kb/mitre/attack/techniques/T1685.003-Modify_or_Spoof_Tool_UI.md",
     "kb/mitre/attack/techniques/T1687-Exploitation_for_Defense_Impairment.md",
@@ -210,10 +208,8 @@
     "kb/mitre/attack/techniques/T1590.002-DNS.md",
     "kb/mitre/attack/techniques/T1588.007-Artificial_Intelligence.md",
     "kb/mitre/attack/techniques/T1588.004-Digital_Certificates.md",
-    "kb/mitre/attack/techniques/T1587.003-Digital_Certificates.md",
     "kb/mitre/attack/techniques",
     "kb/mitre/attack/tactics",
-    "kb/mitre/attack/mitre-attack.canvas",
     "kb/mitre/attack/software",
     "kb/mitre/attack/mitigations",
     "kb/mitre/attack",

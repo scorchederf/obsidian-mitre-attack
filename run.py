@@ -15,7 +15,7 @@ if __name__ == '__main__':
     logger.remove()
     logger.add(sys.stdout, colorize=True, format="[{time:YYYY-MM-DD HH:mm:ss}] - [<level>{level}</level>] - <level>{message}</level>")
 
-    parser = argparse.ArgumentParser(description='Downdload MITRE ATT&CK STIX data and parse it to Obsidian markdown notes')
+    parser = argparse.ArgumentParser(description='Download MITRE ATT&CK STIX data and parse it to Obsidian markdown notes')
 
     parser.add_argument('-d', '--domain', help="Domain should be 'enterprise-attack', 'mobile-attack' or 'ics-attack'", default='enterprise-attack')
     parser.add_argument('-o', '--output', help="Output directory in which the notes will be saved. It should be placed inside a Obsidian vault.")
